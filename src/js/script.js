@@ -8,37 +8,32 @@ burger.addEventListener('click', () => {
  
 
 
-document.getElementById("calorieForm").addEventListener("submit", function (e) {
+document.getElementById('calorie-form').addEventListener('submit', function(e) {
   e.preventDefault();
 
   const gender = document.querySelector('input[name="gender"]:checked').value;
-  const age = parseFloat(document.getElementById("age").value);
-  const height = parseFloat(document.getElementById("height").value);
-  const weight = parseFloat(document.getElementById("weight").value);
-  const activity = parseFloat(document.getElementById("activity").value);
+  const age = parseInt(document.getElementById('age').value);
+  const height = parseInt(document.getElementById('height').value);
+  const weight = parseFloat(document.getElementById('weight').value);
+  const activity = parseFloat(document.getElementById('activity').value);
 
   if (!age || !height || !weight) {
-    alert("Будь ласка, заповни всі поля!");
+    alert('Будь ласка, заповніть усі поля!');
     return;
   }
 
   // Формула Mifflin–St Jeor
-  let bmr;
-  if (gender === "male") {
-    bmr = 10 * weight + 6.25 * height - 5 * age + 5;
-  } else {
-    bmr = 10 * weight + 6.25 * height - 5 * age - 161;
-  }
+  let bmr = 10 * weight + 6.25 * height - 5 * age;
+  bmr += (gender === 'male') ? 5 : -161;
 
   const maintain = Math.round(bmr * activity);
-  const loss = Math.round(maintain - 400);
-  const gain = Math.round(maintain + 400);
+  const loss = Math.round(maintain - maintain * 0.2);
+  const gain = Math.round(maintain + maintain * 0.15);
 
-  document.getElementById("maintain").textContent = maintain;
-  document.getElementById("loss").textContent = loss;
-  document.getElementById("gain").textContent = gain;
+  document.getElementById('maintain').textContent = maintain;
+  document.getElementById('loss').textContent = loss;
+  document.getElementById('gain').textContent = gain;
 
-  const result = document.getElementById("result");
-  result.classList.remove("hidden");
+  document.getElementById('result').classList.remove('hidden');
+  document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
 });
-
