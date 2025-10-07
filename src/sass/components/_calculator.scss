@@ -1,129 +1,142 @@
-
 :root {
-    --green-main: #a5d6a7;
-    --green-dark: #66bb6a;
-    --bg: #f8fff8;
-    --text: #1b1b1b;
+  --green-main: #a5d6a7;
+  --green-dark: #66bb6a;
+  --bg: #f8fff8;
+  --text: #1b1b1b;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+}
+
+.calculator {
+  max-width: 450px;
+  margin: 100px auto;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(102, 187, 106, 0.25);
+  padding: 25px;
+}
+
+.calculator__title {
+  text-align: center;
+  color: var(--green-dark);
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #c8e6c9;
+  background: #f9fff9;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--green-dark);
+}
+
+.radio-group {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.radio-group label {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.btn {
+  width: 100%;
+  background: var(--green-dark);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #57a85e;
+}
+
+.result {
+  margin-top: 25px;
+  padding: 15px;
+  border-radius: 15px;
+  background: #e8f5e9;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  
-  body {
-    font-family: "Poppins", sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    margin: 0;
-    padding: 0;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
+}
+
+/* 🔹 Адаптивність */
+@media (max-width: 480px) {
   .calculator {
-    max-width: 450px;
-    margin: 100px auto;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(102, 187, 106, 0.25);
-    padding: 25px;
+    max-width: 90%;
+    padding: 20px;
   }
-  
+
   .calculator__title {
-    text-align: center;
-    color: var(--green-dark);
-    margin-bottom: 20px;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
-  
-  .form-group {
-    margin-bottom: 18px;
-  }
-  
-  label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 6px;
-  }
-  
-  input, select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #c8e6c9;
-    background: #f9fff9;
-    font-size: 1rem;
-    outline: none;
-    transition: border-color 0.3s ease;
-  }
-  
-  input:focus, select:focus {
-    border-color: var(--green-dark);
-  }
-  
-  .radio-group {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  
+
   .btn {
-    width: 100%;
-    background: var(--green-dark);
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background 0.3s;
+    font-size: 1rem;
   }
-  
-  .btn:hover {
-    background: #57a85e;
+}
+
+@media (max-width: 360px) {
+  .radio-group {
+    flex-direction: column;
+    gap: 5px;
   }
-  
-  .result {
-    margin-top: 25px;
-    padding: 15px;
-    border-radius: 15px;
-    background: #e8f5e9;
-    text-align: center;
-    animation: fadeIn 0.4s ease;
+
+  label {
+    font-size: 0.95rem;
   }
-  
-  .hidden {
-    display: none;
+
+  input,
+  select {
+    font-size: 0.9rem;
+    padding: 8px;
   }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
-  /* 🔹 Адаптивність */
-  @media (max-width: 480px) {
-    .calculator {
-      max-width: 90%;
-      padding: 20px;
-    }
-  
-    .calculator__title {
-      font-size: 1.5rem;
-    }
-  
-    .btn {
-      font-size: 1rem;
-    }
-  }
-  
-  @media (max-width: 360px) {
-    .radio-group {
-      flex-direction: column;
-      gap: 5px;
-    }
-  
-    label {
-      font-size: 0.95rem;
-    }
-  
-    input, select {
-      font-size: 0.9rem;
-      padding: 8px;
-    }
-  }
-  
+}
