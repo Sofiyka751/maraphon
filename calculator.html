@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./src/css/normalize.css">
+  <link rel="stylesheet" href="./src/css/reset.css">
+  <link rel="stylesheet" href="./src/css/style.css">
+  <title>Maraphon</title>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header__content">
+          <p class="header__content-logo" data-i18n="logo">Марафон Трансформації</p>
+          <div class="header__burger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="header__content-navigation">
+            <a href="./index.html#about-maraphon" class="header__content-navigation-item" data-i18n="hedernavtext1">основна частина</a>
+            <a href="./index.html#mySlider" class="header__content-navigation-item" data-i18n="hedernavtext2">раціон</a>
+            <label class="switch header__content-switch">
+              
+              <input type="checkbox" id="lang-switch">
+              <span class="slider header__content-slider"></span>
+              <span class="lang-label">Укр → Ру</span>
+            </label>
+          </div>
+        </div>
+      </header>
+
+      <main class="calculator">
+    
+        <h1 class="calculator__title" data-i18n="mainTitle">Калькулятор калорій</h1>
+    
+        <form id="calorie-form" class="calculator__form">
+          <div class="form-group">
+            <label data-i18n="gender">Стать:</label>
+            <div class="radio-group">
+              <label><input type="radio" name="gender" value="male" checked> <span data-i18n="male">Чоловік</span></label>
+              <label><input type="radio" name="gender" value="female"> <span data-i18n="female">Жінка</span></label>
+            </div>
+          </div>
+    
+          <div class="form-group">
+            <label for="age" data-i18n="age">Вік:</label>
+            <input type="number" id="age" min="10" max="100" required>
+          </div>
+    
+          <div class="form-group">
+            <label for="height" data-i18n="height">Зріст (см):</label>
+            <input type="number" id="height" min="100" max="250" required>
+          </div>
+    
+          <div class="form-group">
+            <label for="weight" data-i18n="weight">Вага (кг):</label>
+            <input type="number" id="weight" min="30" max="200" required>
+          </div>
+    
+          <div class="form-group">
+            <label for="activity" data-i18n="activity">Рівень активності:</label>
+            <select id="activity" required>
+              <option value="1.2" data-i18n="act1">Мінімальний (сидяча робота)</option>
+              <option value="1.375" data-i18n="act2">Легка активність (1-3 рази/тиждень)</option>
+              <option value="1.55" data-i18n="act3">Середня (3-5 разів/тиждень)</option>
+              <option value="1.725" data-i18n="act4">Висока (6-7 разів/тиждень)</option>
+              <option value="1.9" data-i18n="act5">Дуже висока (спорт щодня)</option>
+            </select>
+          </div>
+    
+          <button type="submit" class="btn" data-i18n="calculate">Розрахувати</button>
+        </form>
+    
+        <div id="result" class="result hidden">
+          <h2 data-i18n="resultTitle">Ваш результат:</h2>
+          <p><strong data-i18n="maintainLabel">Підтримка ваги:</strong> <span id="maintain"></span> <span data-i18n="kcal">ккал/день</span></p>
+          <p><strong data-i18n="lossLabel">Для схуднення:</strong> <span id="loss"></span> <span data-i18n="kcal">ккал/день</span></p>
+          <p><strong data-i18n="gainLabel">Для набору:</strong> <span id="gain"></span> <span data-i18n="kcal">ккал/день</span></p>
+        </div>
+      </main>
+  
+  
+
+    <script src="./src/js/script.js"></script>
+    <script src="./src/js/translate.js"></script>
+</body>
+</html>
