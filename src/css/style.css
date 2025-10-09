@@ -854,7 +854,8 @@ label {
   margin-bottom: 6px;
 }
 
-input, select {
+input,
+select {
   width: 100%;
   padding: 10px;
   border-radius: 10px;
@@ -865,7 +866,8 @@ input, select {
   transition: border-color 0.3s ease;
 }
 
-input:focus, select:focus {
+input:focus,
+select:focus {
   border-color: var(--green-dark);
 }
 
@@ -873,6 +875,12 @@ input:focus, select:focus {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+
+.radio-group label {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
 }
 
 .btn {
@@ -935,7 +943,8 @@ input:focus, select:focus {
   label {
     font-size: 0.95rem;
   }
-  input, select {
+  input,
+  select {
     font-size: 0.9rem;
     padding: 8px;
   }
